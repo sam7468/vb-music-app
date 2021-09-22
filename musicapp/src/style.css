@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+
+body,html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+}
+
+form input,.search-bar input,button{
+    border: none;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    background: rgba(245, 253, 255, 0.1);
+    width: 500px;
+    height: 50px;
+    border-radius: 40px;
+    color: silver;
+    box-sizing: border-box;
+    padding: 10px;
+    outline: none;
+}
+
+
+.songs-container{
+    position: absolute;
+    display: flex;
+    width: 70%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: 5%;
+    box-sizing: border-box;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 1px solid rgb(168, 168, 168);
+    overflow: scroll;
+    padding-top: 50px;
+}
+
+.title-container{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin: 20px;
+    padding: 0;
+    border-radius: 30px;
+    background: rgba(242, 252, 255, 0.1);
+    backdrop-filter: Blur(80px);
+    color: white;
+    font-family: 'Jura', sans-serif;
+}
+
+.title-div{
+    min-width: 300px;
+}
+
+input,button{
+    margin: 20px;
+    width: 150px;
+    font-family: 'Jura', sans-serif;
+}
+
+.songs-container::-webkit-scrollbar {
+    display: none;
+  }
+
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 20px;
+    border-radius: 30px;
+    background: rgba(242, 252, 255, 0.1);
+    backdrop-filter: Blur(50px);
+    color: rgb(205, 211, 223);
+    font-family: 'Jura', sans-serif;
+}
+
+label{
+    margin-left: 40px;
+}
+
+.add-icon{
+    position: fixed;
+    color: white;
+    font-size: 5rem;
+    opacity: .5;
+    top:87%;
+    left: 80%;
+    transition: 0.5s ease;
+    
+}
+.add-icon,.like-btn{
+    background:none;
+}
+
+.add-icon:hover{
+    font-size: 5.5rem;
+    opacity: .3;
+}
+
+.like-btn{
+    position: absolute;
+    font-size: 2rem;
+    top: 0;
+    left: 0;
+    transition: .2s ease-in-out;
+}
+
+span{
+    position: relative;
+    top: -5px;
+    left: 15px;
+}
+
+.like-btn:hover,.delete-btn:hover{
+    font-size: 2.2rem;
+    opacity: .7;
+}
+
+.delete-btn{
+    font-size: 1.5rem;
+    transition: .2s ease-in-out;
+    justify-content: flex-end;
+}

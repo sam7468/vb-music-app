@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(209, 209, 209);
+    background:url('./bg.jpeg') ;
+    background-size: cover;
+    backdrop-filter: Blur(5px);
+
+    
+}
+img{
+    height: 50px;
+    width: auto;
+    opacity: 1;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    height: 100px;
+}
+
+.logout{
+    position: absolute;
+    right: 0;
+    color: white;
+    opacity: .7;
+    font-size: 3rem;
+    margin: 20px;
+    margin-top: 22px;
+}
