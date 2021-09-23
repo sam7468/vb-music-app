@@ -83,7 +83,7 @@ function Playlist(){
                                     <h4>{e.title}</h4>
                                     <p>{e.subtitle}</p>
                                 </div>
-                                <button id={e.id} className="delete-btn" onClick={deleteItem} ><AiOutlineDelete/></button>
+                                <p className="delete" id={e.id}  onClick={deleteItem}>DELETE</p>
                             </div>)
                             )
                         }
