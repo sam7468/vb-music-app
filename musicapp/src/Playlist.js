@@ -12,7 +12,7 @@ function Playlist(){
         {id:"3",like:"2",title:"Rihanna - Diamonds",subtitle:"doug"},
         {id:"4",like:"2",title:"sia - Chandelier ",subtitle:"Reed"}
     ]) 
-    const [filteredData,setFilteredData] = useState([])
+    const [filteredSearchData,setFilteredSearchData] = useState([])
 
     const [song,setSong] = useState({title:"",subtitle:""}) 
     const [searchData,setSearch] = useState("")
@@ -20,7 +20,6 @@ function Playlist(){
     //conditional rendering
     const [showContainer,setShowContainer] = useState(true)
     const [showForm,setShowForm] = useState(false)
-    const [showLike,setShowlike] = useState(false)
 
     const handleSonginput = (e) =>{
         let newsong = {...song}
@@ -35,7 +34,7 @@ function Playlist(){
                                         Object.values(item)
                                         .join("").toLowerCase()
                                         .includes(searchData.toLowerCase()));
-        setFilteredData(filtered_search)                                
+        setFilteredSearchData(filtered_search)                                
     }
 
     const addSong = (e) =>{
@@ -46,8 +45,16 @@ function Playlist(){
     }
 
     const deleteItem = (e) =>{
-        const filteredData = data.filter((item) => item.id != e.target.id);
-        setData(filteredData)
+        const new_arr = data.filter((item) => item.id != e.target.id);
+        setData(new_arr)
+        setFilteredSearchData(new_arr)
+    }
+
+    const handleLike = (e) =>{
+        console.log(data[e.currentTarget.id].like)
+        let new_arr = [...data] 
+        new_arr[e.currentTarget.id].like++
+        setData(new_arr)
     }
 
     return(
@@ -62,16 +69,16 @@ function Playlist(){
                     
                     {searchData < 1 ? data.map(e=>
                         (<div className="title-container"> 
-                            <button onClick={()=>{setShowlike(true)}} className="like-btn" ><BsHeart/> {showLike && <span>{e.like}</span>}</button>
+                            <button id={data.indexOf(e)} onClick={handleLike} className="like-btn" ><BsHeart/> <span>{Number(e.like)}</span></button>
                             <div className="title-div">
                                 <h4>{e.title}</h4>
                                 <p>{e.subtitle}</p>
                             </div>
-                            <button id={e.id} className="delete-btn" onClick={deleteItem}><AiOutlineDelete/></button>
+                            <p className="delete" id={e.id}  onClick={deleteItem}>DELETE</p>
                         </div>)
-                        ) : filteredData.map(e=>
+                        ) : filteredSearchData.map(e=>
                             (<div className="title-container"> 
-                                <button onClick={()=>{setShowlike(true)}} className="like-btn"><BsHeart/> {showLike && <span>{e.like}</span>} </button>
+                                <button className="like-btn"><BsHeart/><span>{Number(e.like)}</span></button>
                                 <div className="title-div">
                                     <h4>{e.title}</h4>
                                     <p>{e.subtitle}</p>

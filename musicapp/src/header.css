@@ -23,9 +23,9 @@ img{
 .logout{
     position: absolute;
     right: 0;
-    color: white;
-    opacity: .7;
+    color: rgb(186, 209, 252);
+    opacity: .6;
     font-size: 3rem;
     margin: 20px;
-    margin-top: 22px;
+    margin-top: 19px;
 }
