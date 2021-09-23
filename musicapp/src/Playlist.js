@@ -1,6 +1,7 @@
 import react,{useState} from 'react'
 import {BsHeart} from "react-icons/bs";
 import {RiAddCircleLine} from "react-icons/ri"
+import Search from './Search';
 
 
 function Playlist(){
@@ -26,16 +27,6 @@ function Playlist(){
         setSong(newsong)
     }
 
-    const handleSearchinput = (e) =>{
-        let newSearchdata = e.target.value
-        setSearch(newSearchdata)
-        let filtered_search = data.filter((item) => 
-                                        Object.values(item)
-                                        .join("").toLowerCase()
-                                        .includes(searchData.toLowerCase()));
-        setFilteredSearchData(filtered_search)                                
-    }
-
     const addSong = (e) =>{
         e.preventDefault()
         setData([...data, {id:data.length+1,like:"3",...song}])
@@ -59,10 +50,12 @@ function Playlist(){
     return(
         <>
             {showContainer && <div className="main-container">
-                <div className="search-bar">
-                    <input onChange={handleSearchinput} type="search"></input>
-                    <button type="submit">s e a r c h</button>
-                </div>
+
+                <Search data={data}
+                        searchData={searchData}
+                        setSearch={setSearch}
+                        setFilteredSearchData={setFilteredSearchData}
+                />
 
                 <div className="songs-container">
                     
