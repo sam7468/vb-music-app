@@ -1,5 +1,4 @@
 import react,{useState} from 'react'
-import {AiOutlineDelete} from "react-icons/ai";
 import {BsHeart} from "react-icons/bs";
 import {RiAddCircleLine} from "react-icons/ri"
 
@@ -87,7 +86,14 @@ function Playlist(){
                             </div>)
                             )
                         }
-                </div>   
+                </div>  
+                
+                <button className="add-icon" onClick={()=>{
+                            setShowContainer(false)
+                            setShowForm(true)
+                        }}><RiAddCircleLine/>
+                </button>
+
             </div>} 
 
             {showForm && <form>
@@ -98,12 +104,7 @@ function Playlist(){
                     <input type="text" id="subtitle"  onChange={handleSonginput} required></input>
                     <br></br>
                     <button type="submit" onClick={addSong}>ADD</button>    
-            </form>} 
-
-            {showContainer && <button className="add-icon" onClick={()=>{
-                            setShowContainer(false)
-                            setShowForm(true)
-                        }}><RiAddCircleLine/></button>}   
+            </form>}   
 
         </>
     )

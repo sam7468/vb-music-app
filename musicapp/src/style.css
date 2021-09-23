@@ -95,10 +95,10 @@ label{
 .add-icon{
     position: fixed;
     color: white;
-    font-size: 5rem;
+    font-size: 6rem;
     opacity: .5;
-    top:87%;
-    left: 80%;
+    top:86%;
+    left:80%;
     transition: 0.5s ease;
     
 }
@@ -146,3 +146,4 @@ span{
     letter-spacing: 6px;
     opacity: .6;
 }
+
