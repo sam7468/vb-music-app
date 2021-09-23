@@ -77,7 +77,7 @@ function Playlist(){
                         </div>)
                         ) : filteredSearchData.map(e=>
                             (<div className="title-container"> 
-                                <button className="like-btn"><BsHeart/><span>{Number(e.like)}</span></button>
+                                <button id={data.indexOf(e)} onClick={handleLike} className="like-btn" ><BsHeart/><span>{Number(e.like)}</span></button>
                                 <div className="title-div">
                                     <h4>{e.title}</h4>
                                     <p>{e.subtitle}</p>
