@@ -61,7 +61,7 @@ form input,.search-bar input,button{
 }
 
 .title-div{
-    min-width: 300px;
+    width: 300px;
 }
 
 input,button{
@@ -90,6 +90,17 @@ form{
 
 label{
     margin-left: 40px;
+}
+
+.play-btn{
+    display: flex;
+    position: fixed;
+    color: white;
+    opacity: 0.5;
+    font-size: 2rem;
+}
+.play-btn p:last-child{
+    margin-left: 20px;
 }
 
 .add-icon{

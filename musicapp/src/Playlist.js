@@ -1,6 +1,8 @@
 import react,{useState} from 'react'
 import {BsHeart} from "react-icons/bs";
 import {RiAddCircleLine} from "react-icons/ri"
+import {BsPlay} from "react-icons/bs"
+import {AiOutlinePause} from "react-icons/ai"
 import Search from './Search';
 
 
@@ -65,6 +67,11 @@ function Playlist(){
                             <div className="title-div">
                                 <h4>{e.title}</h4>
                                 <p>{e.subtitle}</p>
+                                
+                            </div>
+                            <div className="play-btn">
+                                <p><BsPlay/></p>
+                                <p><AiOutlinePause/></p>
                             </div>
                             <p className="delete" id={e.id}  onClick={deleteItem}>DELETE</p>
                         </div>)
@@ -74,6 +81,11 @@ function Playlist(){
                                 <div className="title-div">
                                     <h4>{e.title}</h4>
                                     <p>{e.subtitle}</p>
+                                    
+                                </div>
+                                <div className="play-btn">
+                                    <p><BsPlay/></p>
+                                    <p><AiOutlinePause/></p>
                                 </div>
                                 <p className="delete" id={e.id}  onClick={deleteItem}>DELETE</p>
                             </div>)

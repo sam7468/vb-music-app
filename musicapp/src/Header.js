@@ -1,4 +1,3 @@
-import react,{useState} from 'react'
 import './header.css'
 import {HiOutlineLogout} from "react-icons/hi"
 
